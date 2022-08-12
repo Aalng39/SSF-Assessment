@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+</head>
+<body>
+    <h1><strong>Crypto News of the Day</strong></h1>
+    <form
+        action="#"
+        th:action="@{/articles}"
+        method="post"
+        >
+        <div th:each="arti, iterStat : ${newsarticles}" th:value="${newsarticles[iterStat.index]}">
+            <input type="checkbox" value="Save">
+                <label>
+                    <p>Id = <span th:text="${arti.id}"></span></p>
+                    <p>Published Date = <span th:text="${arti.published_on}"></span></p>
+                    <p>Title = <span th:text="${arti.title}"></span></p>
+                    <a th:href="@{${arti.url}}"><span th:text="${arti.url}"></span></a>
+                    <br> 
+                    <img th:src="${arti.imageurl}">
+
+                    <br>
+                    <span th:text="${arti.body}"></span>
+                    <p>Tags = <span th:text="${arti.tags}"></span></p>                   
+                    <p>Categories = <span th:text="${arti.categories}"></span></p>
+                </label>
+            </div>
+        <input type="submit" value="Save">
+    </form>
+</body>
+</html>

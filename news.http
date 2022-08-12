@@ -1,0 +1,12 @@
+GET http://localhost:8080/news/<id> HTTP/1.1
+content-type: application/json
+
+{
+    "id": "id",
+    "title": "title",
+    "body": "body",
+    "published_on": "published_on",
+    "url": "url",
+    "imageurl": "imageurl",
+    "categories": "categories",
+}
